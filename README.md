@@ -6,6 +6,13 @@ In our example, we are using pretrained weights of ViT loaded from HuggingFace.
 We adapt the ViT training code to ColossalAI by leveraging [Boosting API](https://colossalai.org/docs/basics/booster_api) loaded with a chosen plugin, where each plugin corresponds to a specific kind of training strategy. This example supports plugins including TorchDDPPlugin (DDP), LowLevelZeroPlugin (Zero1/Zero2), GeminiPlugin (Gemini) and HybridParallelPlugin (any combination of tensor/pipeline/data parallel).
 
 This repository reproduces the training results of ViT-ColossalAI with hybrid parallel configuration.
+## Overview
+|  |  |  |
+|  ----  | ----  | ----  |
+| **Model** | [ViT-base](https://huggingface.co/google/vit-base-patch16-224) |   |
+| **Dataset** | [beans](https://huggingface.co/datasets/beans) | 8000 images of bean leaves, 3 labels: ['angular_leaf_spot', 'bean_rust', 'healthy'] |
+| **Parallel Settings** | Pipeline | WORLD_SIZE=2 |
+| **Results** | [output.log](output.log) | Evaluation accuracy: 0.9844 |
 ## Quick Start
 ### Install Dependencies
 Install PyTorch:
