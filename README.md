@@ -26,6 +26,8 @@ BUILD_EXT=1 pip install colossalai
 Alternatively, you can install ColossalAI from source:
 ```bash
 git clone https://github.com/hpcaitech/ColossalAI.git
+cd ColossalAI
+BUILD_EXT=1 pip install -e .
 ```
 Install the required packages:
 ```bash
